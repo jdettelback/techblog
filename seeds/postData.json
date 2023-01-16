@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Hello",
+        "body": "This is a post",
+        "user_id": 1
+    },
+    {
+        "title": "Hello",
+        "body": "This is also a post",
+        "user_id": 2
+    },
+    {
+        "title": "Hello",
+        "body": "This is another post",
+        "user_id": 3
+    }
+]
