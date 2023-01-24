@@ -1,6 +1,6 @@
 <div class="mt-4">
   <div>
-    <h3>Edit Post:</h3>
+    <h4>Edit Post:</h4>
 
     <form class="form update-post-form">
       <div class="form-group">
@@ -35,8 +35,41 @@
         >DELETE</button>
       </div>
     </form>
-    </div>
-  
+    <h4>Comments:</h4>
+    {{#each comments as |comment|}}
+      <p>
+        <a href="/comment/{{post_id}}/{{id}}">{{body}}</a>
+        by
+        {{user.name}}
+      </p>
+    {{/each}}
+    {{#if logged_in}}
+      <!--button
+        id="createCommentBtn"
+        class="btn btn-primary"
+        data-id="{{id}}"
+      >Create Comment</button-->
+
+         <form class="form update-comment-form">
+      <div class="form-group">
+        <textarea
+          class="form-input"
+          id="comment-body"
+          name="comment-desc"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <button
+          id="saveCommentBtn"
+          type="submit"
+          class="btn btn-primary"
+          data-id="{{id}}"
+        >Save</button>
+      </div>
+    </form>
+    {{/if}}
+
+  </div>
 
 </div>
 

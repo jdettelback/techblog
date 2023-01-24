@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div class="mt-4">
+<div>
   <div>
     <h3>Create a New Post:</h3>
 
@@ -23,13 +23,13 @@
     </form>
   </div>
 </div>
-<div>
+<div class="mt-4">
   {{#if posts.length}}
     <div class="post-list">
       <h3>Previous blogposts</h3>
 
       {{#each posts as |post|}}
-        <div class="mb-2">
+        <div class="mb-4">
           <div>
             <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
           </div>

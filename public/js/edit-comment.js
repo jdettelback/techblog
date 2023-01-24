@@ -2,6 +2,7 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const btn = document.querySelector("#saveBtn");
+  
   if (btn.hasAttribute("data-id")) {
     const comment_id = btn.getAttribute("data-id");
     const post_id = btn.getAttribute("post-id");

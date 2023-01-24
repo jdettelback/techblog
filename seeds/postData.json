@@ -1,16 +1,16 @@
 [
     {
-        "title": "Hello",
+        "title": "HTML",
         "body": "This is a post",
         "user_id": 1
     },
     {
-        "title": "Hello",
+        "title": "CSS",
         "body": "This is also a post",
         "user_id": 2
     },
     {
-        "title": "Hello",
+        "title": "Javascript",
         "body": "This is another post",
         "user_id": 3
     }
