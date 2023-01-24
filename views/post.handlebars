@@ -1,14 +1,43 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+<div class="mt-4">
+  <div>
+    <h3>Edit Post:</h3>
+
+    <form class="form update-post-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          class="form-input"
+          type="text"
+          value="{{title}}"
+          id="post-title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="post-desc">body</label>
+        <textarea
+          class="form-input"
+          id="post-body"
+          name="post-desc"
+        >{{body}}</textarea>
+      </div>
+      <div class="form-group">
+        <button
+          id="saveBtn"
+          type="submit"
+          class="btn btn-primary"
+          data-id="{{id}}"
+        >Save</button>
+        <button
+          id="delBtn"
+          class="btn btn-sm btn-danger"
+          data-id="{{id}}"
+        >DELETE</button>
+      </div>
+    </form>
+    </div>
+  
+
 </div>
+
+<script src="/js/post.js"></script>

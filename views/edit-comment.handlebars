@@ -1,0 +1,31 @@
+<div class="mt-4">
+  <div>
+    <h3>Edit a comment:</h3>
+
+    <form class="form update-comment-form">
+      <div class="form-group">
+        <textarea
+          class="form-input"
+          id="comment-body"
+          name="comment-desc"
+        >{{body}}</textarea>
+      </div>
+      <div class="form-group">
+        <button
+          id="saveBtn"
+          type="submit"
+          class="btn btn-primary"
+          data-id="{{id}}"
+          post-id="{{post_id}}"
+        >Save</button>
+      </div>
+    </form>
+    <button
+      id="delBtn"
+      class="btn btn-sm btn-danger"
+      data-id="{{id}}"
+    >DELETE</button>
+  </div>
+</div>
+
+<script src="/js/edit-comment.js"></script>

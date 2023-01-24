@@ -1,0 +1,22 @@
+<div class="mt-4">
+  <div>
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+    </div>
+    <h4>Comments:</h4>
+    {{#each comments as |comment| }}
+      <!-- TODO: Show user and createdAt; need to update the query in Route to get Username -->
+      <p>
+       <a href="/comment/{{post_id}}/{{id}}">{{body}}</a> by {{user.name}}
+      </p>
+    {{/each}}
+    {{#if logged_in}}
+    <button
+          id="createCommentBtn"
+          class="btn btn-primary"
+          data-id="{{id}}"
+        >Create Comment</button>
+    {{/if}}
+</div>
+
+<script src="/js/readpost.js"></script>

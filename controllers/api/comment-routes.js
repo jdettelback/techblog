@@ -1,19 +1,18 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
-console.log("in post routes");
+const { Comment } = require("../../models");
+console.log("in comment routes");
 
-// CREATE new post
+// CREATE new comment
 router.post("/", async (req, res) => {
   try {
-    console.log("creating post");
-    const dbPostData = await Post.create({
-      title: req.body.title,
+    console.log("creating comment");
+    const dbCommentData = await Comment.create({
       body: req.body.body,
       user_id: req.session.user_id,
+      post_id: req.body.id
     });
 
-      res.status(200).json(dbPostData);
-    
+    res.status(200).json(dbCommentData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -22,16 +21,20 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    const updatedPost = await Post.update(req.body, {
+    const updatedComment = await Comment.update(
+      {
+         body: req.body.body
+      },
+      {
       where: {
         id: req.params.id,
       },
     });
-    if (!updatedPost[0]) {
-      res.status(404).json({ message: "No post with this id" });
+    if (!updatedComment[0]) {
+      res.status(404).json({ message: "No comment with this id" });
       return;
     }
-    res.status(200).json(updatedPost);
+    res.status(200).json(updatedComment);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,13 +42,13 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const postData = await Post.destroy({
+    const postData = await Comment.destroy({
       where: {
         id: req.params.id,
       },
     });
     if (!postData) {
-      res.status(404).json({ message: "No posts found with this id" });
+      res.status(404).json({ message: "No comment found with this id" });
       return;
     }
     res.status(200).json(postData);
