@@ -1,7 +1,6 @@
 <div class="mt-4">
   <div>
     <h4>Edit Post:</h4>
-
     <form class="form update-post-form">
       <div class="form-group">
         <label for="title">Title</label>
@@ -28,47 +27,38 @@
           class="btn btn-primary"
           data-id="{{id}}"
         >Save</button>
-        
       </div>
     </form>
     <button
-          id="delBtn"
-          class="btn btn-sm btn-danger"
-          data-id="{{id}}"
-        >DELETE</button>
+      id="delBtn"
+      class="btn btn-sm btn-danger"
+      data-id="{{id}}"
+    >DELETE</button>
     <h4>Comments:</h4>
     {{#each comments as |comment|}}
       <p><a href="/comment/{{post_id}}/{{id}}">{{body}}</a></p>
       <p>by {{user.name}} at: {{updatedAt}}</p>
     {{/each}}
     {{#if logged_in}}
-      <!--button
-        id="createCommentBtn"
-        class="btn btn-primary"
-        data-id="{{id}}"
-      >Create Comment</button-->
-
-         <form class="form update-comment-form">
-      <div class="form-group">
-        <textarea
-          class="form-input"
-          id="comment-body"
-          name="comment-desc"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <button
-          id="saveCommentBtn"
-          type="submit"
-          class="btn btn-primary"
-          data-id="{{id}}"
-        >Save</button>
-      </div>
-    </form>
+      <form class="form update-comment-form">
+        <div class="form-group">
+          <textarea
+            class="form-input"
+            id="comment-body"
+            name="comment-desc"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button
+            id="saveCommentBtn"
+            type="submit"
+            class="btn btn-primary"
+            data-id="{{id}}"
+          >Save</button>
+        </div>
+      </form>
     {{/if}}
-
   </div>
-
 </div>
 
 <script src="/js/post.js"></script>
