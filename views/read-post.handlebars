@@ -9,8 +9,7 @@
   {{#each comments as |comment|}}
     <p>
       <a href="/comment/{{post_id}}/{{id}}">{{body}}</a>
-      by
-      {{user.name}}
+      by: {{user.name}}  at: {{updatedAt}}
     </p>
   {{/each}}
   {{#if logged_in}}

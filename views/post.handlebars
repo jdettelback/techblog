@@ -28,20 +28,18 @@
           class="btn btn-primary"
           data-id="{{id}}"
         >Save</button>
-        <button
+        
+      </div>
+    </form>
+    <button
           id="delBtn"
           class="btn btn-sm btn-danger"
           data-id="{{id}}"
         >DELETE</button>
-      </div>
-    </form>
     <h4>Comments:</h4>
     {{#each comments as |comment|}}
-      <p>
-        <a href="/comment/{{post_id}}/{{id}}">{{body}}</a>
-        by
-        {{user.name}}
-      </p>
+      <p><a href="/comment/{{post_id}}/{{id}}">{{body}}</a></p>
+      <p>by {{user.name}} at: {{updatedAt}}</p>
     {{/each}}
     {{#if logged_in}}
       <!--button

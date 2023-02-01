@@ -20,6 +20,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace("/dashboard");
       } else {
+        console.log(response);
         alert("Failed to update post");
       }
     } else {
@@ -39,24 +40,12 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace('/dashboard');
     } else {
       alert("Failed to delete post");
     }
   }
 };
-
-// const newComment = async (event) => {
-//   event.preventDefault();
-
-//   const btn = document.querySelector("#createCommentBtn");
-//   if (btn.hasAttribute("data-id")) {
-//     const post_id = btn.getAttribute("data-id");
-//     document.location.replace("/comment/" + post_id + "/new");
-//   } else {
-//     alert("Create Comment button missing Post ID");
-//   }
-// };
 
 const saveComment = async (event) => {
   event.preventDefault();

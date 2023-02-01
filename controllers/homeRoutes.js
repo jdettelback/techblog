@@ -2,9 +2,10 @@ const router = require("express").Router();
 const { Post, Comment, User } = require("../models");
 const withAuth = require("../utils/auth");
 
+//get all posts
 router.get("/", async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and JOIN with user data
     const postData = await Post.findAll({
       include: [
         {
@@ -16,18 +17,22 @@ router.get("/", async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts);
 
     // Pass serialized data and session flag into template
     res.render("homepage", {
+    
       posts,
       logged_in: req.session.loggedIn,
+    
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/post/:id", async (req, res) => {
+//get a post
+router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -71,6 +76,7 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
+//get comments
 router.get("/comment/:post_id/:comment_id", withAuth, async (req, res) => {
   try {
     if (req.params.comment_id != "new") {

@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
     const dbCommentData = await Comment.create({
       body: req.body.body,
       user_id: req.session.user_id,
-      post_id: req.body.id
+      post_id: req.body.id,
     });
 
     res.status(200).json(dbCommentData);
@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// update comment
 router.put("/:id", async (req, res) => {
   try {
     const updatedComment = await Comment.update(
@@ -40,6 +41,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//delete comment
 router.delete("/:id", async (req, res) => {
   try {
     const postData = await Comment.destroy({

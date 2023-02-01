@@ -3,9 +3,10 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {  //prepares for heroku setup; this is required if using heroku
-  sequelize = new Sequelize(process.env.JAWSDB_URL); //JAWSDB_URL is unique user url from heroku
-} else { //local process if not using heroku
+// needed if you are running on Heroku else localhost
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL); 
+} else { 
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
