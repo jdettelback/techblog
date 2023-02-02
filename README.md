@@ -31,9 +31,13 @@ The user is signed out after a set period of inactivity or by clicking the Logou
 Contact me at [jdettelback@gmail.com](mailto:jdettelback@gmail.com) if you have any questions.  You can see more of my work at <https://github.com/jdettelback>.
 
 
-  ![screenshot](https://raw.githubusercontent.com/jdettelback/notetaker/main/images/screenshotnotetaker.png)
+  ![screenshot](https://raw.githubusercontent.com/jdettelback/techblog/public/images/screenshottechblog.png)
   
-  ![screenshot](https://raw.githubusercontent.com/jdettelback/notetaker/main/images/screenshotnotetaker2.png)
+ ![screenshot](https://raw.githubusercontent.com/jdettelback/techblog/public/images/screenshottechblog2.png)
+
+ ![screenshot](https://raw.githubusercontent.com/jdettelback/techblog/public/images/screenshottechblog3.png)
+
+ ![screenshot](https://raw.githubusercontent.com/jdettelback/techblog/public/images/screenshottechblog4.png)
 
 Link to deployed website:
 
